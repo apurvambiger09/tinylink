@@ -6,7 +6,7 @@ export const links = pgTable("links", {
   code: varchar("code", { length: 10 }).notNull().unique(),
   clicks: integer("clicks").default(0).notNull(),
   createdAt: timestamp("created_at").defaultNow(),
-  lastClicked: timestamp("last_clicked").default(null) as any, 
+  lastClicked: timestamp("last_clicked").default(new Date()), 
 });
 
 
